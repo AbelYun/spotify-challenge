@@ -1,0 +1,31 @@
+body {
+	background-image: url("../img/musicbackground.jpg");
+	background-size: cover;
+
+}
+
+.form-group{
+	width: 60%;
+
+}
+
+#top-content{
+	font-size: 350%;
+	margin-left: 50px;
+}
+
+.help-block{
+	font-size:70%;
+}
+
+#main-content{
+	font-size: 150%;
+	margin-left: 50px;
+	margin-right: 100px;
+	padding: 10px;
+	border-style: solid;
+	border-width: 10px!important;
+	background-color:black;
+	opacity:0.8;
+}
+
