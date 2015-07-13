@@ -26,22 +26,43 @@
     </div>
 
     <div ng-app="myApp" ng-controller="myCtrl" id="main-content">
-
+      <h1>Start here {{user.name}}</h1>
       <div class="row">
-        <h1>Start here {{user.name}}</h1>
-        <form name="songForm">
-          <div class="form-group">
-            <label>Spotify search:</label>
-            <input name="search" ng-minlength=3 placeholder="Enter your search.." ng-model="track" class="form-control" required></input>
-            <p class="help-block" ng-show="songForm.search.$error.minlength">Enter 3+ characters</p>
-          </div>
+
+        <div class="col-sm-4">
          
-          <div class="form-group">
-            <button ng-disabled="songForm.search.$invalid" class="btn btn-primary" ng-click="getSongs()" type="submit">Submit</button>
-          </div>
-        </form>
+          <form name="songForm">
+            <div class="form-group">
+              <label>Search All:</label>
+              <input name="search" ng-minlength=3 placeholder="Enter your search.." ng-model="track" class="form-control" required></input>
+              <p class="help-block" ng-show="songForm.search.$error.minlength">Enter 3+ characters</p>
+            </div>
+           
+            <div class="form-group">
+              <button ng-disabled="songForm.search.$invalid" class="btn btn-primary" ng-click="getSongs()" type="submit">Submit</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="col-sm-4">
+          <form id="artist-search">
+            <div class="form-group">
+              <label>Search by Artist:</label>
+              <input name="search" id="query" value="" class="form-control" placeholder="Artist's Name"></input>
+            </div>
+
+            <div class="form-group">
+              <button class="btn btn-primary" ngclick="getAuthors()" type="submit">Submit</button>
+            </div>
+
+          </form>
+        </div>
+
       </div>
-      <div>
+
+      
+
+      <div id="all-search-results">
           <div class="container-fixed">
             <p ng-show="tracks.length>0" class="help-block" id="click-message">Click to sample</p>
             <div id="tracks" ng-class="track.preview_url == currentSong ? 'playing' : ''"  ng-repeat="track in tracks" class="col-xs-4 img">
@@ -51,8 +72,6 @@
 
               <img ng-click="play(track.preview_url)" title="{{track.name}}" src="{{track.album.images[1].url}}">
               </img>
-
-
             </div>
           </div>
       </div>

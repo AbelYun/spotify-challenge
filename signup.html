@@ -38,12 +38,12 @@
           </div>
         
           <p ng-show="myForm.name.$error.minlength && myForm.name.$dirty" ng-class="'has-error':myForm.name.$touched && myForm.name.$dirty" class="help-block">Name must be at least {{minLength}} characters long</p>
-          <p ng-show="myForm.name.$invalid && myForm.name.$touched && !myForm.name.$dirty" class="help-block">Your name is required.</p>
+          <p ng-show="myForm.name.$invalid && myForm.name.$touched && !myForm.name.$dirty" class="help-block" >Your name is required.</p>
 
            
           <div class="form-group" id="enter-email">
                <label>Email:</label>
-               <input ng-minlength=5 name="email" class="form-control" ng-required="true" ng-model="user.email" required></input>           
+               <input ng-minlength=5 name="email" class="form-control" ng-required="true" ng-model="user.email" placeholder="someone@example.com" required></input>           
           </div>
 
          	<p ng-show="myForm.email.$invalid && myForm.email.$touched && !myForm.email.$dirty" class="help-block">Your Email is required.</p>

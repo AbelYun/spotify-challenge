@@ -11,6 +11,14 @@ var myCtrl = myApp.controller('myCtrl', function($scope, $http) {
       
     })
   }
+  $scope.getAuthors = function() {
+   $http.get(baseUrl + $scope.track).success(function(response){
+
+      data = $scope.tracks = response.tracks.items
+      
+    })
+  }
+
 
   $scope.master = {};
   $scope.user = {};
